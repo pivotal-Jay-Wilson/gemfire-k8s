@@ -1,0 +1,66 @@
+// az acr create --resource-group Gemfire-rg --name gemfirereg --sku Basic
+// az acr login --name gemfirereg
+
+{
+  "adminUserEnabled": false,
+  "anonymousPullEnabled": false,
+  "creationDate": "2024-05-21T17:51:07.734885+00:00",
+  "dataEndpointEnabled": false,
+  "dataEndpointHostNames": [],
+  "encryption": {
+    "keyVaultProperties": null,
+    "status": "disabled"
+  },
+  "id": "/subscriptions/36d68b80-f40e-4d7f-8727-b61d4042f59c/resourceGroups/Gemfire-rg/providers/Microsoft.ContainerRegistry/registries/gemfirereg",
+  "identity": null,
+  "location": "centralus",
+  "loginServer": "gemfirereg.azurecr.io",
+  "name": "gemfirereg",
+  "networkRuleBypassOptions": "AzureServices",
+  "networkRuleSet": null,
+  "policies": {
+    "azureAdAuthenticationAsArmPolicy": {
+      "status": "enabled"
+    },
+    "exportPolicy": {
+      "status": "enabled"
+    },
+    "quarantinePolicy": {
+      "status": "disabled"
+    },
+    "retentionPolicy": {
+      "days": 7,
+      "lastUpdatedTime": "2024-05-21T17:51:19.442587+00:00",
+      "status": "disabled"
+    },
+    "softDeletePolicy": {
+      "lastUpdatedTime": "2024-05-21T17:51:19.442630+00:00",
+      "retentionDays": 7,
+      "status": "disabled"
+    },
+    "trustPolicy": {
+      "status": "disabled",
+      "type": "Notary"
+    }
+  },
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "resourceGroup": "Gemfire-rg",
+  "sku": {
+    "name": "Basic",
+    "tier": "Basic"
+  },
+  "status": null,
+  "systemData": {
+    "createdAt": "2024-05-21T17:51:07.734885+00:00",
+    "createdBy": "wjay@vmware.com",
+    "createdByType": "User",
+    "lastModifiedAt": "2024-05-21T17:51:07.734885+00:00",
+    "lastModifiedBy": "wjay@vmware.com",
+    "lastModifiedByType": "User"
+  },
+  "tags": {},
+  "type": "Microsoft.ContainerRegistry/registries",
+  "zoneRedundancy": "Disabled"
+}

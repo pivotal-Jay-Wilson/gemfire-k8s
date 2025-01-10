@@ -1,0 +1,73 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gemfire-management-console
+  name: gemfire-management-console
+  namespace: gemfire-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gemfire-management-console
+  template:
+    metadata:
+      labels:
+        app: gemfire-management-console
+    spec:
+      containers:
+      - image: registry.packages.broadcom.com/gemfire-management-console/gemfire-management-console:1.2.1
+        name: gemfire-management-console
+        ports:
+        - containerPort: 443
+          name: https
+        - containerPort: 8080
+          name: http
+      imagePullSecrets:
+        - name: image-pull-secret
+      dnsPolicy: ClusterFirst
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: gemfire-management-console
+  name: gemfire-management-console
+  namespace: gemfire-operator
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: gemfire-management-console
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: gmc 
+#   namespace: gemfire-operator
+#   annotations:
+#     # cert-manager.io/cluster-issuer: letsencrypt-prod
+#     #ingress.kubernetes.io/force-ssl-redirect: "true"
+#     kubernetes.io/ingress.allow-http: "true"
+#     kubernetes.io/ingress.class: contour
+#     kubernetes.io/tls-acme: "true"
+# spec:
+#   # tls:
+#   # - secretName: letsencrypt-prod 
+#   #   hosts:
+#   #   - gmc.gemfire.jaywilson.dev
+#   rules:
+#   - host: gmclocal.com
+#     http:
+#       paths:
+#       - pathType: Prefix
+#         path: /
+#         backend:
+#           service:
+#             name: gemfire-management-console
+#             port:
+#               number: 8080
+

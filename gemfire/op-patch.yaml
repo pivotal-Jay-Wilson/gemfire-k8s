@@ -1,0 +1,5 @@
+spec:
+  template:
+    spec:
+      serviceAccountName: sa-gemfire-op      
+# kubectl patch deployment gemfire-operator-controller-manager --patch-file op-patch.yaml     

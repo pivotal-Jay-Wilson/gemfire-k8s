@@ -1,0 +1,16 @@
+[
+  {
+    "connectionNumber": 1,
+    "clusterNickname": "ln",
+    "clusterHost": "ln-locator-0.uk.svc.cluster.local",
+    "clusterPort": 7070,
+    "clusterSecurityType": "None"
+  },
+  {
+    "connectionNumber": 2,
+    "clusterNickname": "ny",
+    "clusterHost": "ny-locator-0.us.svc.cluster.local",
+    "clusterPort": 7070,
+    "clusterSecurityType": "None"
+  }
+]

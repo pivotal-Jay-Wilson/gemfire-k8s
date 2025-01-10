@@ -1,0 +1,23 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gemfire-op-autoscaling
+rules:
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["*"]
+
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gemfire-op-autoscaling
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: gemfire-operator
+roleRef:
+  kind: ClusterRole
+  name: gemfire-op-autoscaling
+  apiGroup: rbac.authorization.k8s.io
+

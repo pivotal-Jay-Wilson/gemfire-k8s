@@ -51,7 +51,7 @@ gcloud services enable container.googleapis.com
 5.  run: ```terraform init``` 
 6.  run: ```terraform plan -out state.txt``` 
 7.  run: ```terraform apply "state.txt" ``` 
-8.  Set up the lock kubeconfig
+8.  Set up the local kubeconfig
 ```
 gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name)  --region us-central1 --project $(terraform output -raw project_id)
 ```

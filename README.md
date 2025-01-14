@@ -32,7 +32,8 @@
 6. Set the profile to gemfire ```minikube profile gemfire```
 
 ## GCP
-1. Create a GCP lab in ACloudGuru
+1. Create a GCP lab 
+    - This will work woth the playgrounds in  [ACloudGuru](https://learn.acloud.guru/cloud-playground/cloud-sandboxes)
 2. Update gcloud/terraform.tfvars with the location and project id: 
    ```
    location = "us-central1"
@@ -98,7 +99,7 @@ kubectl port-forward -n gemfire-operator services/gemfire-management-console 808
 ```
 or for Minikube:
 ```
-minikube service -n gemfire-operator  gemfire-management-console  --urlmini
+minikube service -n gemfire-operator  gemfire-management-console  --url
 ```
 10. Open http://localhost:8080/
 11. Enable developer mode

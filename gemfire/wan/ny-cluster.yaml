@@ -8,18 +8,19 @@ spec:
     tls: {}
   image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
   imagePullSecrets:
-  - name: image-pull-secret   
+    - name: image-pull-secret
   locators:
     overrides:
       gemFireProperties:
-      - name: "start-dev-rest-api"
-        value: "true"      
-      - name: "gemfire.distributed-system-id"
-        value: "2"
-      - name: "remote-locators"  
-        value: "ln-locator-0.uk.svc.cluster.local[10334]"
+        - name: "start-dev-rest-api"
+          value: "true"
+        - name: "gemfire.distributed-system-id"
+          value: "2"
+        - name: "remote-locators"
+          value: "ln-locator-0.uk.svc.cluster.local[10334]"
   servers:
     overrides:
       gemFireProperties:
-      - name: "start-dev-rest-api"
-        value: "true"      
+        - name: "start-dev-rest-api"
+          value: "true"
+

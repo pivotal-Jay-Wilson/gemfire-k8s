@@ -26,10 +26,10 @@
 ## Minikube
 1. Install [Minikube](https://minikube.sigs.k8s.io/docs/)
 2. Change to the minkube directory
-3.  run: ```terraform init``` 
-4.  run: ```terraform plan -out state.txt``` 
-5.  run: ```terraform apply "state.txt" ``` 
-6.  set the profile to gemfire ```minikube profile gemfire```
+3. Run: ```terraform init``` 
+4. Run: ```terraform plan -out state.txt``` 
+5. Run: ```terraform apply "state.txt" ``` 
+6. Set the profile to gemfire ```minikube profile gemfire```
 
 ## GCP
 1. Create a GCP lab in ACloudGuru
@@ -55,7 +55,7 @@ gcloud services enable container.googleapis.com
 ```
 gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name)  --region us-central1 --project $(terraform output -raw project_id)
 ```
-9. Run 
+
 
 ## AZURE -- not tested with acloud guru
 1. Create a azure lab 

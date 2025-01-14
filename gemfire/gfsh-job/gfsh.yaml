@@ -5,6 +5,17 @@ metadata:
 spec:
   template:
     spec:
+      initContainers:
+        - name: init-uk
+          image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
+          command: ['sh', '-c']
+          args:
+            - "until gfsh -e 'connect --locator=ln-locator-0.uk.svc.cluster.local[10334]'; do printf '#'; sleep 10; done"
+        - name: init-usgf
+          image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
+          command: ['sh', '-c']
+          args:
+            - "until gfsh -e 'connect --locator=ny-locator-0.us.svc.cluster.local[10334]'; do printf '#'; sleep 10; done"
       containers:
         - name: london
           image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1

@@ -7,7 +7,7 @@
     - ./gemfire/helmcharts/gemfire-crd-x.x.x.tgz
     - ./gemfire/helmcharts/gemfire-operator-2.4.0.tgz
 4. Setup a Kubernetes environment below(Minikube, GCP) 
-   - Since we lost the playgoroud none of the cloud have been tested
+   - Since we lost the playground none of the cloud have been tested
    - I have moved the install of the certificate manager into the kubernetes setup
 
 ## Get an Access Token for Broadcom Registry
@@ -34,7 +34,7 @@
 
 ## GCP
 1. Create a GCP lab 
-    - This will work woth the playgrounds in  [ACloudGuru](https://learn.acloud.guru/cloud-playground/cloud-sandboxes)
+    - This will work with the playgrounds in  [ACloudGuru](https://learn.acloud.guru/cloud-playground/cloud-sandboxes)
 2. Update gcloud/terraform.tfvars with the location and project id: 
    ```
    location = "us-central1"
@@ -69,7 +69,7 @@ gcloud container clusters get-credentials $(terraform output -raw kubernetes_clu
 az aks get-credentials --resource-group $(terraform output -raw resource_group_name) --name $(terraform output -raw kubernetes_cluster_name)    
 ```
 
-## KIND not implementes
+## KIND not implemented
 TBD
 
 ## TANZU Lab - not tested
@@ -104,7 +104,7 @@ gemfire_op_version = <version of the gemfire operator that you downloaded>
         ```
       - open http://localhost:8080 in the browser        
     - Expose through ingress (minikube only)
-      - Change directopry to gemfire/ingressforminikube
+      - Change directory to gemfire/ingressforminikube
       - Run:
       ```
       kubectl create -f gmc-ingress.yaml       
@@ -116,7 +116,7 @@ gemfire_op_version = <version of the gemfire operator that you downloaded>
 
 10. Enable developer mode
 11. Import connections file exportConnection_2024815.json
-12. Select both clusters and impprt 
+12. Select both clusters and import 
 
 # KPACK
 1. cd ./kpack
@@ -137,8 +137,8 @@ gemfire_op_version = <version of the gemfire operator that you downloaded>
 
 ##TODO
 1. dataload turough cron job
-2. Enable a TLS versiion (genfiretls directory)
-3. Add security (keycloak diredtory)
+2. Enable a TLS version (genfiretls directory)
+3. Add security (keycloak directory)
 4. LDAP security
 5. Kpack to install demo apps
 

@@ -1,0 +1,51 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: crt
+spec:
+  secretName: crt-secret
+  dnsNames:
+  - foo.example.com
+  - bar.example.com
+  issuerRef:
+    name: letsencrypt-prod
+  keystores:
+    jks:
+      create: true
+      passwordSecretRef: # Password used to encrypt the keystore
+        key: password-key
+        name: jks-password-secret
+    pkcs12:
+      create: true
+      passwordSecretRef: # Password used to encrypt the keystore
+        key: password-key
+        name: pkcs12-password-secret
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-test-pod
+  namespace: uk
+spec:
+  containers:
+    - name: test-container
+      image: nginx
+      env:
+      - name: PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: client-cert-ln
+            key: password      
+      resources: {}
+      volumeMounts:
+        - name: secret-volume
+          mountPath: /certs
+          readOnly: true
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: client-cert-ln
+
+
+
+

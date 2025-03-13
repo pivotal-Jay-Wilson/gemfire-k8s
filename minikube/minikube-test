@@ -1,0 +1,4 @@
+domain test
+nameserver 192.168.49.2
+search_order 1
+timeout 5

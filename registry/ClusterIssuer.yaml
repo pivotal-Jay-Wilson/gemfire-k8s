@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: registry
+  name: registry
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: kpack
+  name: kpack
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: selfsigned-issuer
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: my-selfsigned-ca
+  namespace: registry
+spec:
+  isCA: true
+  commonName: my-selfsigned-ca # deprecated but still requires in iOS environment
+  secretName: root-secret
+  subject: # needed later for local trust store
+    organizations:
+      - cert-manager
+  dnsNames:
+    - registry.registry.svc.cluster.local
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
+  secretTemplate:
+    annotations:
+      replicator.v1.mittwald.de/replication-allowed: "true"  # permit replication
+      replicator.v1.mittwald.de/replicate-to:  "registyry,kpack,default" 
+
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: my-ca-issuer
+spec:
+  ca:
+    secretName: root-secret

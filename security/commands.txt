@@ -1,0 +1,3 @@
+kubectl get secret client-cert-ln -n uk -o=jsonpath='{.data.password}' | base64 --decode > ./passwordln
+kubectl get secret client-cert-ln -n uk -o=jsonpath='{.data.keystore\.p12}' | base64 --decode > .//keystorln.p12
+kubectl get secret client-cert-ln -n uk -o=jsonpath='{.data.truststore\.p12}' | base64 --decode > ./truststoreln.p12

@@ -1,0 +1,151 @@
+# docker run --detach --rm --name openldap \
+#   --network my-network \
+#   --env LDAP_ADMIN_USERNAME=admin \
+#   --env LDAP_ADMIN_PASSWORD=adminpassword \
+#   --env LDAP_USERS=customuser \
+#   --env LDAP_PASSWORDS=custompassword \
+#   --env LDAP_ROOT=dc=example,dc=org \
+#   --env LDAP_ADMIN_DN=cn=admin,dc=example,dc=org \
+#   bitnami/openldap:latest
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ldap
+  labels:
+    app: ldap
+spec:
+  selector:
+    matchLabels:
+      app: ldap
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ldap
+    spec:
+      containers:
+        - name: ldap
+          # image: bitnami/openldap:latest
+          image: osixia/openldap:latest
+          ports:
+            - containerPort: 389
+              name: openldap
+          env:
+            - name: LDAP_ORGANISATION
+              value: "ldapusermanager"
+            - name: LDAP_DOMAIN
+              value: "vmware.com"
+            - name: LDAP_ADMIN_PASSWORD
+              value: "change_me"
+            - name: LDAP_RFC2307BIS_SCHEMA
+              value: "true"
+            - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
+              value: "true"
+            - name: LDAP_TLS_VERIFY_CLIENT
+              value: "never"              
+            # - name: LDAP_ENABLE_TLS
+            #   value: "no"
+            # - name: LDAP_ADMIN_USERNAME
+            #   value: "admin"
+            # - name: LDAP_ADMIN_PASSWORD
+            #   value: "adminpassword"
+            # - name: LDAP_USERS
+            #   value: "customuser"
+            # - name: LDAP_PASSWORDS
+            #   value: "custompassword"
+            # - name: LDAP_ROOT
+            #   value: "dc=vmware,dc=com"
+            # - name: LDAP_ADMIN_DN
+            #   value: "cn=admin,dc=vmware,dc=com"
+
+---            
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ldap
+  name: ldap-service
+spec:
+  ports:
+    - port: 389
+  selector:
+    app: ldap
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ldapui
+  labels:
+    app: ldapui
+spec:
+  selector:
+    matchLabels:
+      app: ldapui
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ldapui
+    spec:
+      containers:
+        - name: ldapui
+          image: wheelybird/ldap-user-manager:latest
+          resources:
+          ports:
+            - containerPort: 80
+              name: http
+            - containerPort: 443
+              name: https
+          env:
+            - name: SERVER_HOSTNAME
+              value: "localhost"
+            - name: LDAP_URI
+              value: "ldap://ldap-service.default.svc.cluster.local"
+            - name: LDAP_BASE_DN
+              value: "dc=vmware,dc=com"
+            - name: LDAP_ADMINS_GROUP
+              value: "admins"
+            - name: LDAP_ADMIN_BIND_DN
+              value: "cn=admin,dc=vmware,dc=com"
+            - name: LDAP_ADMIN_BIND_PWD
+              value: "change_me"
+            - name: LDAP_IGNORE_CERT_ERRORS
+              value: "true"              
+              # - name: LDAP_URI
+            #   value: "ldap://ldap-service.default.svc.cluster.local"
+            # - name: LDAP_BASE_DN
+            #   value: "dc=vmware,dc=com"
+            # - name: LDAP_REQUIRE_STARTTLSLDAP_USERS
+            #   value: "FALSE"
+            # - name: LDAP_ADMINS_GROUP
+            #   value: "admins"
+            # - name: LDAP_ADMIN_BIND_DN
+            #   value: "cn=admin,dc=vmware,dc=com"
+            # - name: LDAP_ADMIN_BIND_PWD
+            #   value: "adminpassword"
+            # - name: LDAP_IGNORE_CERT_ERRORS
+            #   value: "true"
+            # - name: NO_HTTPS
+            #   value: "true"
+            # - name: PASSWORD_HASH
+            #   value: "SSHA"
+            # - name: SERVER_HOSTNAME
+            #   value: "localhost:8081"              
+---              
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ldapui
+  name: ldapui-service
+spec:
+  ports:
+    - port: 80
+      name: http
+    - port: 443
+      name: https
+  selector:
+    app: ldapui
+  

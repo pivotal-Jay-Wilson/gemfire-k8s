@@ -11,7 +11,7 @@ spec:
           command: ['sh', '-c']
           args:
             - "until gfsh -e 'connect --locator=ln-locator-0.uk.svc.cluster.local[10334]'; do printf '#'; sleep 10; done"
-        - name: init-usgf
+        - name: init-us
           image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
           command: ['sh', '-c']
           args:

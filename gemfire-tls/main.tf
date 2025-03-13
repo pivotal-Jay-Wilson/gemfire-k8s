@@ -53,7 +53,7 @@ resource "helm_release" "gemfire-crd" {
     depends_on = [ kubernetes_secret.image-pull-secret]
 }
 
-
+# old way
 data "kubectl_path_documents" "gmc" {
     pattern = "./gmc/*.yaml"
 }
@@ -69,12 +69,6 @@ data "kubectl_path_documents" "wan" {
 }
 
 resource "kubectl_manifest" "waninstall" {
-  wait_for {
-    field {
-      key = "status.servers"
-      value = "2/2"
-    }
-  }  
   for_each  = data.kubectl_path_documents.wan.manifests
   yaml_body = each.value
   depends_on = [helm_release.gemfire-crd, helm_release.gemfire-operator ]

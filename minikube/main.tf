@@ -1,12 +1,35 @@
-resource "minikube_cluster" "genmfire" {
+resource "minikube_cluster" "gemfire" {
   driver       = "docker"
-  # driver =  "qemu"
-  # network = "socket_vmnet"
-  cpus = 4
-  memory = "8gb"
+  cpus = 8
+  memory = "16 g"
   cluster_name = "gemfire"
   addons = [
     "default-storageclass",
-    "storage-provisioner"
+    "storage-provisioner",
+    "ingress",
+    "ingress-dns",
+    "metrics-server"
+    # "registry",
+    # "registry-aliases"
   ]
+}
+
+resource "kubernetes_namespace" "cert-manager" {
+  metadata {
+    name = "cert-manager"
+  }
+}
+
+resource "helm_release" "cert-manager" {
+  name       = "cert-manager"
+  repository = "https://charts.jetstack.io"
+  chart      = "cert-manager"
+  namespace =  kubernetes_namespace.cert-manager.metadata[0].name
+  set = [
+    {
+      name  = "installCRDs"
+      value = "true"
+    }
+  ]
+
 }

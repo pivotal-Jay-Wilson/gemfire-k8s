@@ -1,24 +1,28 @@
 apiVersion: gemfire.vmware.com/v1
 kind: GemFireCluster
 metadata:
-  name: ny
-  namespace: us
+  name: ln
+  namespace: uk
 spec:
   security:
-    tls: {} 
+    # tls: {}
+    tls:
+      secretName: client-cert-ln 
+      clientAuthenticationRequired: false      
   image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
   imagePullSecrets:
     - name: image-pull-secret
   locators:
     overrides:
       gemFireProperties:
-        - name: "distributed-system-id"
-          value: "2"
+        - name: "start-dev-rest-api"
+          value: "true"
+        - name: "gemfire.distributed-system-id"
+          value: "1"
         - name: "remote-locators"
-          value: "ln-locator-0.uk.svc.cluster.local[10334]"
+          value: "ny-locator-0.us.svc.cluster.local[10334]"
   servers:
     overrides:
       gemFireProperties:
         - name: "start-dev-rest-api"
           value: "true"
-

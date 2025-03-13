@@ -1,0 +1,37 @@
+apiVersion: gemfire.vmware.com/v1
+kind: GemFireCluster
+metadata:
+  name: ln
+  namespace: uk
+spec:
+  security:
+    tls: {}  
+  image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
+  imagePullSecrets:
+    - name: image-pull-secret
+  locators:
+    overrides:
+      # jvmOptions:
+      #   - "-Dsun.management.jmxremote.level=FINEST"
+      #   - "-Dsun.management.jmxremote.handlers=java.util.logging.ConsoleHandler"
+      #   - "-Djava.util.logging.ConsoleHandler.level=FINEST"
+      #   - "-Dcom.sun.management.jmxremote.local.only=false"
+      #   - "-Dcom.sun.management.jmxremote.ssl=false"
+      #   - "-Dcom.sun.management.jmxremote.authenticate=false"
+      #   - "-Dcom.sun.management.jmxremote.port=9010"
+      #   - "-Dcom.sun.management.jmxremote.rmi.port=9010"
+      #   - "-Dcom.sun.management.jmxremote.host=0.0.0.0"
+      #   - "-Djava.rmi.server.hostname=0.0.0.0"
+      #   - "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
+      gemFireProperties:
+        - name: "start-dev-rest-api"
+          value: "true"
+        - name: "distributed-system-id"
+          value: "1"
+        # - name: "remote-locators"
+        #   value: "ny-locator-0.us.svc.cluster.local[10334]"
+  servers:
+    overrides:
+      gemFireProperties:
+        - name: "start-dev-rest-api"
+          value: "true"

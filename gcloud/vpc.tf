@@ -1,10 +1,4 @@
 
-
-provider "google" {
-  project = var.project_id
-  region  = var.location
-}
-
 # VPC
 resource "google_compute_network" "vpc" {
   name                    = "${var.project_id}-vpc1"

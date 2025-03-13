@@ -1,0 +1,20 @@
+apiVersion: kpack.io/v1alpha2
+kind: Image
+metadata:
+  name: vector-image
+  namespace: default
+spec:
+  tag: registry.kube-system.svc.cluster.local/backend
+  serviceAccountName: kpacksa
+  builder:
+    name: python-builder
+    kind: Builder
+  source:
+    git:
+      url: https://github.com/pivotal-Jay-Wilson/gemfire-examples
+      revision: main
+    subPath: extensions/gemfireVectorDatabase/imageSearch/backend
+  build:
+    env:
+      - name: "BP_CPYTHON_VERSION"
+        value: "3.9"

@@ -7,8 +7,8 @@
     - ./gemfire/helmcharts/gemfire-crd-x.x.x.tgz
     - ./gemfire/helmcharts/gemfire-operator-2.4.0.tgz
 4. Setup a Kubernetes environment below(Minikube, GCP) 
-   - Since we lost the playgoroud non of the cloud have been tested
-   - I have meoved the install of the certificate manager into the kubernetes setup
+   - Since we lost the playgoroud none of the cloud have been tested
+   - I have moved the install of the certificate manager into the kubernetes setup
 
 ## Get an Access Token for Broadcom Registry
 1. Login to https://support.broadcom.com/ and select My Downloads
@@ -131,12 +131,12 @@ gemfire_op_version = <version of the gemfire operator that you downloaded>
 10. k create -f clusterstore.yaml  
 
 # Cleanup
-1. delete the kluster
+1. delete the cluster
 2. run ```./clean.sh``` script
     -  this will delete all the terraform files in all directories
 
 ##TODO
-1. 
+1. dataload turough cron job
 2. Enable a TLS versiion (genfiretls directory)
 3. Add security (keycloak diredtory)
 4. LDAP security

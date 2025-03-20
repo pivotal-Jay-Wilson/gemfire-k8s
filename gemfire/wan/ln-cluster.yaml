@@ -11,6 +11,7 @@ spec:
     - name: image-pull-secret
   locators:
     overrides:
+      jvmOptions: ["-Duser.timezone=Europe/London"]
       gemFireProperties:
         - name: "distributed-system-id"
           value: "1"

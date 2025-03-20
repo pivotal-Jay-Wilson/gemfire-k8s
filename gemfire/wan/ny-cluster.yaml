@@ -11,6 +11,7 @@ spec:
     - name: image-pull-secret
   locators:
     overrides:
+      jvmOptions: ["-Duser.timezone=America/New_York"]
       gemFireProperties:
         - name: "distributed-system-id"
           value: "2"
@@ -18,6 +19,7 @@ spec:
           value: "ln-locator-0.uk.svc.cluster.local[10334]"
   servers:
     overrides:
+      jvmOptions: ["-Duser.timezone=America/New_York"]
       gemFireProperties:
         - name: "start-dev-rest-api"
           value: "true"

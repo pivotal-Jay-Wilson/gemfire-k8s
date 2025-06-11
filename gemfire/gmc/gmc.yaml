@@ -42,6 +42,7 @@ spec:
     targetPort: 8080
   selector:
     app: gemfire-management-console
+
 # ---
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress

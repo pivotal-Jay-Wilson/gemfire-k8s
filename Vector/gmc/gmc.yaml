@@ -1,0 +1,48 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gemfire-management-console
+  name: gemfire-management-console
+  namespace: gemfire-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gemfire-management-console
+  template:
+    metadata:
+      labels:
+        app: gemfire-management-console
+    spec:
+      containers:
+      - image: registry.packages.broadcom.com/gemfire-management-console/gemfire-management-console:1.3.0
+        name: gemfire-management-console
+        ports:
+        - containerPort: 443
+          name: https
+        - containerPort: 8080
+          name: http
+      imagePullSecrets:
+        - name: image-pull-secret
+      dnsPolicy: ClusterFirst
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: gemfire-management-console
+  name: gemfire-management-console
+  namespace: gemfire-operator
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 31000
+  selector:
+    app: gemfire-management-console
+  type: NodePort    
+
+

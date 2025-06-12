@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: gemfire-server-service
+    app.kubernetes.io/instance: ln
+    app.kubernetes.io/name: gemfire
+    gemfire.vmware.com/app: ln-server
+  name: ln-server-nodeport
+  namespace: uk
+spec:
+  ports:
+  - name: server-dev-rest-api
+    port: 7070
+    protocol: TCP
+    targetPort: 7070
+    nodePort: 32000
+  publishNotReadyAddresses: true
+  selector:
+    gemfire.vmware.com/app: ln-server
+  sessionAffinity: None
+  type: NodePort

@@ -11,7 +11,7 @@ spec:
           command: ['sh', '-c']
           args:
             - "until gfsh -e 'connect --locator=ln-locator-0.uk.svc.cluster.local[10334]'; do printf '#'; sleep 10; done"
-        - name: init-usgf
+        - name: init-us
           image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
           command: ['sh', '-c']
           args:
@@ -29,9 +29,7 @@ spec:
             - "-e create gateway-receiver"
             - "-e configure pdx --read-serialized=true --disk-store"
             - "-e create gateway-sender --id='ny' --parallel='false' --remote-distributed-system-id='2'"
-            # - "-e create region --name=sample-region --type=REPLICATE --gateway-sender-id='ny'"
-            # - "-e create region --name=function-region --type=REPLICATE"
-            # - "-e create region --name=pets --type=REPLICATE_PERSISTENT"
+            - "-e create region --name=sample-region --type=REPLICATE --gateway-sender-id='ny'"
         - name: newyork
           image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
           env:
@@ -44,9 +42,6 @@ spec:
             - "-e create gateway-receiver"
             - "-e configure pdx --read-serialized=true --disk-store"
             - "-e create gateway-sender --id='ln' --parallel='false' --remote-distributed-system-id='1'"
-            # - "-e create region --name=sample-region --type=REPLICATE --gateway-sender-id='ln'"
-            # - "-e create region --name=function-region --type=REPLICATE"
-            # - "-e create region --name=pets --type=REPLICATE_PERSISTENT"
+            - "-e create region --name=sample-region --type=REPLICATE --gateway-sender-id='ln'"
       restartPolicy: Never
-# kubectl run -i --tty --rm debug --image=registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1  -- gfsh
 

@@ -1,14 +1,17 @@
 resource "minikube_cluster" "gemfire" {
-  driver       = "docker"
-  cpus = 8
+  # driver  = "docker"
+  driver = "podman"
+  container_runtime = "containerd"  
+  # container_runtime = "cri-o"  
+  cpus = 2
   memory = "16 g"
   cluster_name = "gemfire"
   addons = [
     "default-storageclass",
     "storage-provisioner",
     "ingress",
-    "ingress-dns",
-    "metrics-server"
+    "ingress-dns"
+    #,"metrics-server"
     # "registry",
     # "registry-aliases"
   ]

@@ -1,0 +1,17 @@
+# use if using kind 
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: gemfire-management-console
+  name: gemfire-management-console-nodeport
+  namespace: gemfire-operator
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 31000
+  selector:
+    app: gemfire-management-console
+  type: NodePort    

@@ -5,7 +5,7 @@
 2. Run ```./.clean``` shell script to delete any terraform artifacts 
 3. Download helm charts for the version of gemfire you want to deploy and put it in the gemfire/helmcharts/ directory
     - ./gemfire/helmcharts/gemfire-crd-x.x.x.tgz
-    - ./gemfire/helmcharts/gemfire-operator-2.4.0.tgz
+    - ./gemfire/helmcharts/gemfire-operator-x.x.xx.tgz
 4. Setup a Kubernetes environment below(Minikube, GCP) 
    - Since we lost the playground none of the cloud have been tested
    - I have moved the install of the certificate manager into the kubernetes setup
@@ -32,6 +32,11 @@
 6. Run: ```terraform apply "state.txt" ``` 
 7. Set the profile to gemfire ```minikube profile gemfire```
 
+### if you would like to use podman add the following to the "minikube_cluster" resource for  "gemfire" in ./minkube/main.tf
+```
+  driver = "podman"
+  container_runtime = "containerd"  
+```
 ## GCP
 1. Create a GCP lab 
     - This will work with the playgrounds in  [ACloudGuru](https://learn.acloud.guru/cloud-playground/cloud-sandboxes)
@@ -69,8 +74,21 @@ gcloud container clusters get-credentials $(terraform output -raw kubernetes_clu
 az aks get-credentials --resource-group $(terraform output -raw resource_group_name) --name $(terraform output -raw kubernetes_cluster_name)    
 ```
 
-## KIND not implemented
-TBD
+## KIND 
+1. Install Kind cli
+2. Run script ./kind/kind-with-registry-docker.sh or kind/kind-with-registry-podman.sh
+3. Install cert manager
+   ```
+   helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --version v1.6.3 --set installCRDs=true  
+   ```
+4. Run all steps in All Platforms
+5. Add the nodeports for gmc and the rest api
+   ```
+   k create -f restnodeport.yaml  
+   k create -f gmc-nodeport.yaml
+   ```
+6. This will expose the management console on http://localhost:31000/login and the rest api on http://localhost:32000/gemfire-api/swagger-ui/index.html
+
 
 ## TANZU Lab - not tested
 1. run pieline for tkg
@@ -135,11 +153,11 @@ gemfire_op_version = <version of the gemfire operator that you downloaded>
 2. run ```./clean.sh``` script
     -  this will delete all the terraform files in all directories
 
-##TODO
-1. dataload turough cron job
-2. Enable a TLS version (genfiretls directory)
-3. Add security (keycloak directory)
-4. LDAP security
-5. Kpack to install demo apps
+# TODO
+- [ ] dataload through cron job
+- [ ] Enable a TLS version (genfiretls directory)
+- [ ] Add security (keycloak directory)
+- [ ] LDAP security
+- [ ] Kpack to install demo apps
 
 

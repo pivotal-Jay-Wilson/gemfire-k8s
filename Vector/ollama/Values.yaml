@@ -1,0 +1,6 @@
+# helm install ollama ollama-helm/ollama --namespace ollama --values values.yaml
+ollama:
+  models:
+    pull:
+      - all-minilm:l12-v2
+      # - sentence-transformers/all-MiniLM-L6-v2

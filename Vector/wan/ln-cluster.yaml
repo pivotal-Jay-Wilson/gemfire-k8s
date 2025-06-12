@@ -1,0 +1,35 @@
+apiVersion: gemfire.vmware.com/v1
+kind: GemFireCluster
+metadata:
+  name: ln
+  namespace: uk
+spec:
+  security:
+    tls: {}  
+  image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
+  imagePullSecrets:
+    - name: image-pull-secret
+  locators:
+    overrides:
+      jvmOptions: ["-Duser.timezone=Europe/London"]
+      gemFireProperties:
+        - name: "distributed-system-id"
+          value: "1"
+        - name: "remote-locators"
+          value: "ny-locator-0.us.svc.cluster.local[10334]"
+    libraries:
+      - name: gemfire-vectordb
+        container:
+          image: localhost:5001/gemfire-vector:1.2.0  
+          path: "/gemfire-vectordb-gfm/*.gfm"          
+  servers:
+    overrides:
+      gemFireProperties:
+        - name: "start-dev-rest-api"
+          value: "true"
+    libraries:
+      - name: gemfire-vectordb
+        container:
+          image: localhost:5001/gemfire-vector:1.2.0  
+          path: "/gemfire-vectordb-gfm/*.gfm"         
+          

@@ -46,3 +46,10 @@ rm -rf ./gemfire-tls/.terraform.lock.hcl
 rm -rf ./gemfire-tls/state.tfplan
 rm -rf ./gemfire-tls/terraform.tfstate.backup
 rm -rf ./gemfire-tls/state.txt
+
+rm -rf ./Vector/.terraform
+rm -rf ./Vector/terraform.tfstate
+rm -rf ./Vector/.terraform.lock.hcl
+rm -rf ./Vector/state.tfplan
+rm -rf ./Vector/terraform.tfstate.backup
+rm -rf ./Vector/state.txt

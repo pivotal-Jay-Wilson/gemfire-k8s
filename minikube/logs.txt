@@ -1,0 +1,476 @@
+
+==> Audit <==
+|----------------|-------------------------------------------------|----------|------|---------|---------------------|---------------------|
+|    Command     |                      Args                       | Profile  | User | Version |     Start Time      |      End Time       |
+|----------------|-------------------------------------------------|----------|------|---------|---------------------|---------------------|
+| update-check   |                                                 | minikube | wjay | v1.35.0 | 08 May 25 16:36 EDT | 08 May 25 16:36 EDT |
+| update-check   |                                                 | minikube | wjay | v1.35.0 | 08 May 25 21:10 EDT | 08 May 25 21:10 EDT |
+| update-check   |                                                 | minikube | wjay | v1.35.0 | 09 May 25 08:29 EDT | 09 May 25 08:29 EDT |
+| delete         |                                                 | gemfire  | wjay | v1.35.0 | 09 May 25 12:59 EDT | 09 May 25 12:59 EDT |
+| update-context |                                                 | gemfire  | wjay | v1.35.0 | 09 May 25 13:06 EDT | 09 May 25 13:06 EDT |
+| delete         |                                                 | gemfire  | wjay | v1.35.0 | 09 May 25 13:13 EDT | 09 May 25 13:13 EDT |
+| start          | --driver=podman                                 | minikube | wjay | v1.35.0 | 09 May 25 13:13 EDT |                     |
+|                | --container-runtime=cri-o                       |          |      |         |                     |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 09 May 25 13:14 EDT | 09 May 25 13:14 EDT |
+| start          | --driver=podman                                 | minikube | wjay | v1.35.0 | 09 May 25 13:14 EDT | 09 May 25 13:15 EDT |
+|                | --container-runtime=cri-o                       |          |      |         |                     |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 09 May 25 13:16 EDT | 09 May 25 13:16 EDT |
+| update-context |                                                 | minikube | wjay | v1.35.0 | 09 May 25 13:20 EDT |                     |
+| update-context |                                                 | gemfire  | wjay | v1.35.0 | 09 May 25 13:20 EDT | 09 May 25 13:20 EDT |
+| update-context |                                                 | gemfire  | wjay | v1.35.0 | 09 May 25 13:22 EDT | 09 May 25 13:22 EDT |
+| config         | set driver podman                               | gemfire  | wjay | v1.35.0 | 09 May 25 13:24 EDT | 09 May 25 13:24 EDT |
+| delete         |                                                 | gemfire  | wjay | v1.35.0 | 09 May 25 13:25 EDT | 09 May 25 13:25 EDT |
+| start          | --driver=podman                                 | grmfire  | wjay | v1.35.0 | 09 May 25 13:30 EDT | 09 May 25 13:30 EDT |
+|                | --container-runtime=cri-o -p                    |          |      |         |                     |                     |
+|                | grmfire                                         |          |      |         |                     |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 09 May 25 15:56 EDT | 09 May 25 15:56 EDT |
+| delete         |                                                 | grmfire  | wjay | v1.35.0 | 09 May 25 15:57 EDT | 09 May 25 15:57 EDT |
+| update-check   |                                                 | minikube | wjay | v1.35.0 | 12 May 25 07:46 EDT | 12 May 25 07:46 EDT |
+| delete         |                                                 | gemfire  | wjay | v1.35.0 | 12 May 25 08:07 EDT | 12 May 25 08:07 EDT |
+| update-context |                                                 | gemfire  | wjay | v1.35.0 | 12 May 25 08:27 EDT | 12 May 25 08:27 EDT |
+| delete         |                                                 | gemfire  | wjay | v1.35.0 | 12 May 25 08:30 EDT | 12 May 25 08:30 EDT |
+| start          | --driver=qemu                                   | minikube | wjay | v1.35.0 | 12 May 25 08:33 EDT | 12 May 25 08:34 EDT |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 12 May 25 09:18 EDT | 12 May 25 09:18 EDT |
+| start          | --driver=podman                                 | minikube | wjay | v1.35.0 | 12 May 25 09:33 EDT |                     |
+|                | --container-runtime=containerd                  |          |      |         |                     |                     |
+|                | --memory max -cpu 8                             |          |      |         |                     |                     |
+| start          | --driver=podman                                 | minikube | wjay | v1.35.0 | 12 May 25 09:35 EDT | 12 May 25 09:36 EDT |
+|                | --container-runtime=containerd                  |          |      |         |                     |                     |
+|                | --memory max                                    |          |      |         |                     |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 12 May 25 12:30 EDT | 12 May 25 12:30 EDT |
+| update-check   |                                                 | minikube | wjay | v1.35.0 | 13 May 25 07:57 EDT | 13 May 25 07:57 EDT |
+| start          |                                                 | gemfire  | wjay | v1.35.0 | 13 May 25 09:14 EDT | 13 May 25 09:14 EDT |
+| delete         |                                                 | gemfire  | wjay | v1.35.0 | 13 May 25 12:53 EDT | 13 May 25 12:53 EDT |
+| start          | --driver=podman                                 | minikube | wjay | v1.35.0 | 13 May 25 13:01 EDT | 13 May 25 13:02 EDT |
+|                | --container-runtime=containerd                  |          |      |         |                     |                     |
+|                | --memory max                                    |          |      |         |                     |                     |
+| mount          | /data:/data                                     | minikube | wjay | v1.35.0 | 13 May 25 14:43 EDT |                     |
+| mount          | /Users/wjay/code/gemfire-k8s/Vector/data:/data1 | minikube | wjay | v1.35.0 | 13 May 25 14:44 EDT |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 13 May 25 14:49 EDT | 13 May 25 14:49 EDT |
+| start          | --driver=qemu                                   | minikube | wjay | v1.35.0 | 13 May 25 14:51 EDT |                     |
+|                | --container-runtime=containerd                  |          |      |         |                     |                     |
+|                | --memory 16384 -cpu 8                           |          |      |         |                     |                     |
+| start          | --driver=qemu --memory 16384                    | minikube | wjay | v1.35.0 | 13 May 25 14:51 EDT |                     |
+|                | -cpu 8                                          |          |      |         |                     |                     |
+| start          | --driver=qemu --memory 16384                    | minikube | wjay | v1.35.0 | 13 May 25 14:52 EDT | 13 May 25 14:53 EDT |
+| mount          | /Users/wjay/code/gemfire-k8s/Vector/data:/data  | minikube | wjay | v1.35.0 | 13 May 25 14:58 EDT |                     |
+| ssh            |                                                 | minikube | wjay | v1.35.0 | 13 May 25 14:59 EDT | 13 May 25 15:00 EDT |
+| ssh            |                                                 | minikube | wjay | v1.35.0 | 13 May 25 15:20 EDT | 13 May 25 15:21 EDT |
+| start          | --driver=kvm2                                   | minikube | wjay | v1.35.0 | 13 May 25 15:25 EDT |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 13 May 25 15:25 EDT | 13 May 25 15:25 EDT |
+| start          | --driver=kvm2                                   | minikube | wjay | v1.35.0 | 13 May 25 15:25 EDT |                     |
+| start          | --driver=vmware                                 | minikube | wjay | v1.35.0 | 13 May 25 15:27 EDT |                     |
+| start          | --driver vfkit --network                        | minikube | wjay | v1.35.0 | 13 May 25 15:30 EDT |                     |
+|                | vmnet-shared                                    |          |      |         |                     |                     |
+| start          | --driver vfkit --network                        | minikube | wjay | v1.35.0 | 13 May 25 15:32 EDT |                     |
+|                | vmnet-shared                                    |          |      |         |                     |                     |
+| start          | --driver vfkit                                  | minikube | wjay | v1.35.0 | 13 May 25 15:32 EDT |                     |
+| start          | --driver=vfkit --memory 16384                   | minikube | wjay | v1.35.0 | 13 May 25 15:33 EDT |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 13 May 25 15:37 EDT | 13 May 25 15:37 EDT |
+| start          | --driver=virtualbox                             | minikube | wjay | v1.35.0 | 13 May 25 15:38 EDT |                     |
+| start          | --driver=podman                                 | minikube | wjay | v1.35.0 | 13 May 25 15:47 EDT |                     |
+|                | --container-runtime=containerd                  |          |      |         |                     |                     |
+|                | --memory max                                    |          |      |         |                     |                     |
+| start          | --driver=podman                                 | minikube | wjay | v1.35.0 | 13 May 25 15:48 EDT | 13 May 25 15:49 EDT |
+|                | --container-runtime=containerd                  |          |      |         |                     |                     |
+|                | --memory max                                    |          |      |         |                     |                     |
+| mount          | /Users/wjay/code/gemfire-k8s/Vector/data:/data  | minikube | wjay | v1.35.0 | 13 May 25 15:51 EDT |                     |
+| mount          | /Users/wjay/code/gemfire-k8s/Vector/data:/host  | minikube | wjay | v1.35.0 | 13 May 25 15:51 EDT |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 13 May 25 15:53 EDT | 13 May 25 15:53 EDT |
+| start          | --driver=podman                                 | minikube | wjay | v1.35.0 | 13 May 25 15:53 EDT | 13 May 25 15:54 EDT |
+|                | --container-runtime=crio                        |          |      |         |                     |                     |
+|                | --memory max                                    |          |      |         |                     |                     |
+| mount          | /Users/wjay/code/gemfire-k8s/Vector/data:/data  | minikube | wjay | v1.35.0 | 13 May 25 15:56 EDT |                     |
+| ssh            |                                                 | minikube | wjay | v1.35.0 | 13 May 25 15:57 EDT |                     |
+| delete         |                                                 | minikube | wjay | v1.35.0 | 13 May 25 16:03 EDT | 13 May 25 16:03 EDT |
+| start          | --driver=podman                                 | gemfire  | wjay | v1.35.0 | 13 May 25 17:11 EDT |                     |
+|                | --container-runtime=crio                        |          |      |         |                     |                     |
+|                | --memory max                                    |          |      |         |                     |                     |
+|----------------|-------------------------------------------------|----------|------|---------|---------------------|---------------------|
+
+
+==> Last Start <==
+Log file created at: 2025/05/13 17:11:28
+Running on machine: MXDG3KV4Y4
+Binary: Built with gc go1.23.4 for darwin/arm64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0513 17:11:28.979840   70898 out.go:345] Setting OutFile to fd 1 ...
+I0513 17:11:28.980180   70898 out.go:397] isatty.IsTerminal(1) = true
+I0513 17:11:28.980182   70898 out.go:358] Setting ErrFile to fd 2...
+I0513 17:11:28.980184   70898 out.go:397] isatty.IsTerminal(2) = true
+I0513 17:11:28.980282   70898 root.go:338] Updating PATH: /Users/wjay/.minikube/bin
+I0513 17:11:28.982908   70898 out.go:352] Setting JSON to false
+I0513 17:11:29.018808   70898 start.go:129] hostinfo: {"hostname":"MXDG3KV4Y4","uptime":34495,"bootTime":1747136193,"procs":812,"os":"darwin","platform":"darwin","platformFamily":"Standalone Workstation","platformVersion":"15.3.1","kernelVersion":"24.3.0","kernelArch":"arm64","virtualizationSystem":"","virtualizationRole":"","hostId":"0f803e39-4429-5af3-bb0a-6ab7119c5c20"}
+W0513 17:11:29.018907   70898 start.go:137] gopshost.Virtualization returned error: not implemented yet
+I0513 17:11:29.025412   70898 out.go:177] 😄  [gemfire] minikube v1.35.0 on Darwin 15.3.1 (arm64)
+I0513 17:11:29.036584   70898 notify.go:220] Checking for updates...
+I0513 17:11:29.037181   70898 config.go:182] Loaded profile config "gemfire": Driver=podman, ContainerRuntime=containerd, KubernetesVersion=v1.30.0
+I0513 17:11:29.042622   70898 out.go:177] 🆕  Kubernetes 1.32.0 is now available. If you would like to upgrade, specify: --kubernetes-version=v1.32.0
+I0513 17:11:29.047091   70898 driver.go:394] Setting default libvirt URI to qemu:///system
+I0513 17:11:29.167272   70898 podman.go:123] podman version: 5.4.2
+I0513 17:11:29.172165   70898 out.go:177] ✨  Using the podman (experimental) driver based on existing profile
+I0513 17:11:29.180148   70898 start.go:297] selected driver: podman
+I0513 17:11:29.180165   70898 start.go:901] validating driver "podman" against &{Name:gemfire KeepContext:false EmbedCerts:false MinikubeISO:https://github.com/kubernetes/minikube/releases/download/v1.33.0/minikube-v1.33.0-arm64.iso KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e Memory:16384 CPUs:8 DiskSize:20000 Driver:podman HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[/Users:/minikube-host] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.30.0 ClusterName:gemfire Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:containerd CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.30.0 ContainerRuntime:containerd ControlPlane:true Worker:true}] Addons:map[default-storageclass:true ingress:true ingress-dns:true storage-provisioner:true] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/Users:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath:/opt/homebrew/opt/socket_vmnet/bin/socket_vmnet_client SocketVMnetPath:/opt/homebrew/var/run/socket_vmnet StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:0s}
+I0513 17:11:29.180265   70898 start.go:912] status for podman: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0513 17:11:29.180376   70898 cli_runner.go:164] Run: podman system info --format json
+I0513 17:11:29.295849   70898 info.go:288] podman info: {Host:{BuildahVersion:1.39.4 CgroupVersion:v2 Conmon:{Package:conmon-2.1.12-3.fc41.aarch64 Path:/usr/bin/conmon Version:conmon version 2.1.12, commit: } Distribution:{Distribution:fedora Version:41} MemFree:16144908288 MemTotal:16721645568 OCIRuntime:{Name:crun Package:crun-1.20-2.fc41.aarch64 Path:/usr/bin/crun Version:crun version 1.20
+commit: 9c9a76ac11994701dd666c4f0b869ceffb599a66
+rundir: /run/user/503/crun
+spec: 1.0.0
++SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +CRIU +LIBKRUN +WASM:wasmedge +YAJL} SwapFree:0 SwapTotal:0 Arch:arm64 Cpus:8 Eventlogger:journald Hostname:localhost.localdomain Kernel:6.12.13-200.fc41.aarch64 Os:linux Security:{Rootless:true} Uptime:0h 19m 35.00s} Registries:{Search:[docker.io]} Store:{ConfigFile:/var/home/core/.config/containers/storage.conf ContainerStore:{Number:0} GraphDriverName:overlay GraphOptions:{} GraphRoot:/var/home/core/.local/share/containers/storage GraphStatus:{BackingFilesystem:xfs NativeOverlayDiff:true SupportsDType:true UsingMetacopy:false} ImageStore:{Number:0} RunRoot:/run/user/503/containers VolumePath:/var/home/core/.local/share/containers/storage/volumes}}
+W0513 17:11:29.296032   70898 out.go:270] ❗  You cannot change the memory size for an existing minikube cluster. Please first delete the cluster.
+I0513 17:11:29.296065   70898 cni.go:84] Creating CNI manager for ""
+I0513 17:11:29.296097   70898 cni.go:143] "podman" driver + "crio" runtime found, recommending kindnet
+I0513 17:11:29.296125   70898 start.go:340] cluster config:
+{Name:gemfire KeepContext:false EmbedCerts:false MinikubeISO:https://github.com/kubernetes/minikube/releases/download/v1.33.0/minikube-v1.33.0-arm64.iso KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e Memory:16384 CPUs:8 DiskSize:20000 Driver:podman HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[/Users:/minikube-host] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.30.0 ClusterName:gemfire Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:crio CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.30.0 ContainerRuntime:crio ControlPlane:true Worker:true}] Addons:map[default-storageclass:true ingress:true ingress-dns:true storage-provisioner:true] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/Users:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath:/opt/homebrew/opt/socket_vmnet/bin/socket_vmnet_client SocketVMnetPath:/opt/homebrew/var/run/socket_vmnet StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:0s}
+I0513 17:11:29.305745   70898 out.go:177] 👍  Starting "gemfire" primary control-plane node in "gemfire" cluster
+I0513 17:11:29.316951   70898 cache.go:121] Beginning downloading kic base image for podman with crio
+I0513 17:11:29.321338   70898 out.go:177] 🚜  Pulling base image v0.0.46 ...
+I0513 17:11:29.329722   70898 preload.go:131] Checking if preload exists for k8s version v1.30.0 and runtime crio
+I0513 17:11:29.329801   70898 cache.go:150] Downloading gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e to local cache
+I0513 17:11:29.329970   70898 preload.go:146] Found local preload: /Users/wjay/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.30.0-cri-o-overlay-arm64.tar.lz4
+I0513 17:11:29.329976   70898 cache.go:56] Caching tarball of preloaded images
+I0513 17:11:29.330136   70898 image.go:65] Checking for gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e in local cache directory
+I0513 17:11:29.330151   70898 image.go:68] Found gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e in local cache directory, skipping pull
+I0513 17:11:29.330166   70898 image.go:137] gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e exists in cache, skipping pull
+I0513 17:11:29.330183   70898 cache.go:153] successfully saved gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e as a tarball
+I0513 17:11:29.330184   70898 preload.go:172] Found /Users/wjay/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.30.0-cri-o-overlay-arm64.tar.lz4 in cache, skipping download
+I0513 17:11:29.330197   70898 cache.go:59] Finished verifying existence of preloaded tar for v1.30.0 on crio
+I0513 17:11:29.330276   70898 profile.go:143] Saving config to /Users/wjay/.minikube/profiles/gemfire/config.json ...
+E0513 17:11:29.330914   70898 cache.go:222] Error downloading kic artifacts:  not yet implemented, see issue #8426
+I0513 17:11:29.330923   70898 cache.go:227] Successfully downloaded all kic artifacts
+I0513 17:11:29.330975   70898 start.go:360] acquireMachinesLock for gemfire: {Name:mk8cd73adb723717a6347f790c663a82f8832094 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0513 17:11:29.331098   70898 start.go:364] duration metric: took 114.541µs to acquireMachinesLock for "gemfire"
+I0513 17:11:29.331108   70898 start.go:96] Skipping create...Using existing machine configuration
+I0513 17:11:29.331145   70898 fix.go:54] fixHost starting: 
+I0513 17:11:29.331404   70898 cli_runner.go:164] Run: podman container inspect gemfire --format={{.State.Status}}
+W0513 17:11:29.425677   70898 cli_runner.go:211] podman container inspect gemfire --format={{.State.Status}} returned with exit code 125
+I0513 17:11:29.425727   70898 fix.go:112] recreateIfNeeded on gemfire: state= err=unknown state "gemfire": podman container inspect gemfire --format={{.State.Status}}: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:29.425742   70898 fix.go:117] machineExists: true. err=unknown state "gemfire": podman container inspect gemfire --format={{.State.Status}}: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+W0513 17:11:29.425745   70898 fix.go:138] unexpected machine state, will restart: unknown state "gemfire": podman container inspect gemfire --format={{.State.Status}}: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:29.436013   70898 out.go:177] 🔄  Restarting existing podman container for "gemfire" ...
+I0513 17:11:29.440454   70898 cli_runner.go:164] Run: podman start gemfire
+W0513 17:11:29.525688   70898 cli_runner.go:211] podman start gemfire returned with exit code 125
+I0513 17:11:29.525806   70898 cli_runner.go:164] Run: podman inspect gemfire
+W0513 17:11:29.600954   70898 cli_runner.go:211] podman inspect gemfire returned with exit code 125
+W0513 17:11:29.600980   70898 errors.go:82] Failed to get postmortem inspect. podman inspect gemfire :podman inspect gemfire: exit status 125
+stdout:
+[]
+
+stderr:
+Error: no such object: "gemfire"
+I0513 17:11:29.601064   70898 cli_runner.go:164] Run: podman logs --timestamps gemfire
+W0513 17:11:29.671347   70898 cli_runner.go:211] podman logs --timestamps gemfire returned with exit code 125
+W0513 17:11:29.671374   70898 errors.go:89] Failed to get postmortem logs. podman logs --timestamps gemfire :podman logs --timestamps gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no container with name or ID "gemfire" found: no such container
+I0513 17:11:29.671468   70898 cli_runner.go:164] Run: podman system info --format json
+I0513 17:11:29.776825   70898 info.go:288] podman info: {Host:{BuildahVersion:1.39.4 CgroupVersion:v2 Conmon:{Package:conmon-2.1.12-3.fc41.aarch64 Path:/usr/bin/conmon Version:conmon version 2.1.12, commit: } Distribution:{Distribution:fedora Version:41} MemFree:16144556032 MemTotal:16721645568 OCIRuntime:{Name:crun Package:crun-1.20-2.fc41.aarch64 Path:/usr/bin/crun Version:crun version 1.20
+commit: 9c9a76ac11994701dd666c4f0b869ceffb599a66
+rundir: /run/user/503/crun
+spec: 1.0.0
++SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +CRIU +LIBKRUN +WASM:wasmedge +YAJL} SwapFree:0 SwapTotal:0 Arch:arm64 Cpus:8 Eventlogger:journald Hostname:localhost.localdomain Kernel:6.12.13-200.fc41.aarch64 Os:linux Security:{Rootless:true} Uptime:0h 19m 35.00s} Registries:{Search:[docker.io]} Store:{ConfigFile:/var/home/core/.config/containers/storage.conf ContainerStore:{Number:0} GraphDriverName:overlay GraphOptions:{} GraphRoot:/var/home/core/.local/share/containers/storage GraphStatus:{BackingFilesystem:xfs NativeOverlayDiff:true SupportsDType:true UsingMetacopy:false} ImageStore:{Number:0} RunRoot:/run/user/503/containers VolumePath:/var/home/core/.local/share/containers/storage/volumes}}
+I0513 17:11:29.776857   70898 errors.go:106] postmortem podman info: {Host:{BuildahVersion:1.39.4 CgroupVersion:v2 Conmon:{Package:conmon-2.1.12-3.fc41.aarch64 Path:/usr/bin/conmon Version:conmon version 2.1.12, commit: } Distribution:{Distribution:fedora Version:41} MemFree:16144556032 MemTotal:16721645568 OCIRuntime:{Name:crun Package:crun-1.20-2.fc41.aarch64 Path:/usr/bin/crun Version:crun version 1.20
+commit: 9c9a76ac11994701dd666c4f0b869ceffb599a66
+rundir: /run/user/503/crun
+spec: 1.0.0
++SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +CRIU +LIBKRUN +WASM:wasmedge +YAJL} SwapFree:0 SwapTotal:0 Arch:arm64 Cpus:8 Eventlogger:journald Hostname:localhost.localdomain Kernel:6.12.13-200.fc41.aarch64 Os:linux Security:{Rootless:true} Uptime:0h 19m 35.00s} Registries:{Search:[docker.io]} Store:{ConfigFile:/var/home/core/.config/containers/storage.conf ContainerStore:{Number:0} GraphDriverName:overlay GraphOptions:{} GraphRoot:/var/home/core/.local/share/containers/storage GraphStatus:{BackingFilesystem:xfs NativeOverlayDiff:true SupportsDType:true UsingMetacopy:false} ImageStore:{Number:0} RunRoot:/run/user/503/containers VolumePath:/var/home/core/.local/share/containers/storage/volumes}}
+I0513 17:11:29.776956   70898 network_create.go:284] running [podman network inspect gemfire] to gather additional debugging logs...
+I0513 17:11:29.776963   70898 cli_runner.go:164] Run: podman network inspect gemfire
+W0513 17:11:29.854646   70898 cli_runner.go:211] podman network inspect gemfire returned with exit code 125
+I0513 17:11:29.854674   70898 network_create.go:287] error running [podman network inspect gemfire]: podman network inspect gemfire: exit status 125
+stdout:
+[]
+
+stderr:
+Error: network gemfire: network not found
+I0513 17:11:29.854683   70898 network_create.go:289] output of [podman network inspect gemfire]: -- stdout --
+[]
+
+-- /stdout --
+** stderr ** 
+Error: network gemfire: network not found
+
+** /stderr **
+I0513 17:11:29.854761   70898 cli_runner.go:164] Run: podman system info --format json
+I0513 17:11:29.965287   70898 info.go:288] podman info: {Host:{BuildahVersion:1.39.4 CgroupVersion:v2 Conmon:{Package:conmon-2.1.12-3.fc41.aarch64 Path:/usr/bin/conmon Version:conmon version 2.1.12, commit: } Distribution:{Distribution:fedora Version:41} MemFree:16148389888 MemTotal:16721645568 OCIRuntime:{Name:crun Package:crun-1.20-2.fc41.aarch64 Path:/usr/bin/crun Version:crun version 1.20
+commit: 9c9a76ac11994701dd666c4f0b869ceffb599a66
+rundir: /run/user/503/crun
+spec: 1.0.0
++SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +CRIU +LIBKRUN +WASM:wasmedge +YAJL} SwapFree:0 SwapTotal:0 Arch:arm64 Cpus:8 Eventlogger:journald Hostname:localhost.localdomain Kernel:6.12.13-200.fc41.aarch64 Os:linux Security:{Rootless:true} Uptime:0h 19m 36.00s} Registries:{Search:[docker.io]} Store:{ConfigFile:/var/home/core/.config/containers/storage.conf ContainerStore:{Number:0} GraphDriverName:overlay GraphOptions:{} GraphRoot:/var/home/core/.local/share/containers/storage GraphStatus:{BackingFilesystem:xfs NativeOverlayDiff:true SupportsDType:true UsingMetacopy:false} ImageStore:{Number:0} RunRoot:/run/user/503/containers VolumePath:/var/home/core/.local/share/containers/storage/volumes}}
+I0513 17:11:29.965544   70898 ssh_runner.go:195] Run: sh -c "df -h /var | awk 'NR==2{print $5}'"
+I0513 17:11:29.965591   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:30.068893   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:30.150233   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:30.150363   70898 retry.go:31] will retry after 359.790703ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:30.512090   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:30.664834   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:30.748401   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:30.748478   70898 retry.go:31] will retry after 471.921804ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:31.222451   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:31.364677   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:31.447306   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+W0513 17:11:31.447403   70898 start.go:268] error running df -h /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+
+W0513 17:11:31.447413   70898 start.go:235] error getting percentage of /var that is free: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:31.447524   70898 ssh_runner.go:195] Run: sh -c "df -BG /var | awk 'NR==2{print $4}'"
+I0513 17:11:31.447573   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:31.556399   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:31.631163   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:31.631236   70898 retry.go:31] will retry after 163.028966ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:31.795637   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:31.918121   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:32.010073   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:32.010146   70898 retry.go:31] will retry after 292.098888ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:32.304804   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:32.466056   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:32.537730   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:32.537812   70898 retry.go:31] will retry after 357.708037ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:32.897769   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:33.041272   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:33.119429   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+W0513 17:11:33.119508   70898 start.go:283] error running df -BG /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+
+W0513 17:11:33.119517   70898 start.go:240] error getting GiB of /var that is available: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:33.119538   70898 fix.go:56] duration metric: took 3.78851075s for fixHost
+I0513 17:11:33.119543   70898 start.go:83] releasing machines lock for "gemfire", held for 3.788573625s
+W0513 17:11:33.119578   70898 start.go:714] error starting host: driver start: start: podman start gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no container with name or ID "gemfire" found: no such container
+W0513 17:11:33.119628   70898 out.go:270] 🤦  StartHost failed, but will try again: driver start: start: podman start gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no container with name or ID "gemfire" found: no such container
+
+I0513 17:11:33.119645   70898 start.go:729] Will try again in 5 seconds ...
+I0513 17:11:38.121022   70898 start.go:360] acquireMachinesLock for gemfire: {Name:mk8cd73adb723717a6347f790c663a82f8832094 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0513 17:11:38.122248   70898 start.go:364] duration metric: took 1.111042ms to acquireMachinesLock for "gemfire"
+I0513 17:11:38.122436   70898 start.go:96] Skipping create...Using existing machine configuration
+I0513 17:11:38.122449   70898 fix.go:54] fixHost starting: 
+I0513 17:11:38.123470   70898 cli_runner.go:164] Run: podman container inspect gemfire --format={{.State.Status}}
+W0513 17:11:38.259820   70898 cli_runner.go:211] podman container inspect gemfire --format={{.State.Status}} returned with exit code 125
+I0513 17:11:38.259857   70898 fix.go:112] recreateIfNeeded on gemfire: state= err=unknown state "gemfire": podman container inspect gemfire --format={{.State.Status}}: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:38.259864   70898 fix.go:117] machineExists: true. err=unknown state "gemfire": podman container inspect gemfire --format={{.State.Status}}: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+W0513 17:11:38.259867   70898 fix.go:138] unexpected machine state, will restart: unknown state "gemfire": podman container inspect gemfire --format={{.State.Status}}: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:38.266573   70898 out.go:177] 🔄  Restarting existing podman container for "gemfire" ...
+I0513 17:11:38.276703   70898 cli_runner.go:164] Run: podman start gemfire
+W0513 17:11:38.364856   70898 cli_runner.go:211] podman start gemfire returned with exit code 125
+I0513 17:11:38.364953   70898 cli_runner.go:164] Run: podman inspect gemfire
+W0513 17:11:38.451039   70898 cli_runner.go:211] podman inspect gemfire returned with exit code 125
+W0513 17:11:38.451059   70898 errors.go:82] Failed to get postmortem inspect. podman inspect gemfire :podman inspect gemfire: exit status 125
+stdout:
+[]
+
+stderr:
+Error: no such object: "gemfire"
+I0513 17:11:38.451144   70898 cli_runner.go:164] Run: podman logs --timestamps gemfire
+W0513 17:11:38.532670   70898 cli_runner.go:211] podman logs --timestamps gemfire returned with exit code 125
+W0513 17:11:38.532694   70898 errors.go:89] Failed to get postmortem logs. podman logs --timestamps gemfire :podman logs --timestamps gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no container with name or ID "gemfire" found: no such container
+I0513 17:11:38.532785   70898 cli_runner.go:164] Run: podman system info --format json
+I0513 17:11:38.627489   70898 info.go:288] podman info: {Host:{BuildahVersion:1.39.4 CgroupVersion:v2 Conmon:{Package:conmon-2.1.12-3.fc41.aarch64 Path:/usr/bin/conmon Version:conmon version 2.1.12, commit: } Distribution:{Distribution:fedora Version:41} MemFree:16149307392 MemTotal:16721645568 OCIRuntime:{Name:crun Package:crun-1.20-2.fc41.aarch64 Path:/usr/bin/crun Version:crun version 1.20
+commit: 9c9a76ac11994701dd666c4f0b869ceffb599a66
+rundir: /run/user/503/crun
+spec: 1.0.0
++SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +CRIU +LIBKRUN +WASM:wasmedge +YAJL} SwapFree:0 SwapTotal:0 Arch:arm64 Cpus:8 Eventlogger:journald Hostname:localhost.localdomain Kernel:6.12.13-200.fc41.aarch64 Os:linux Security:{Rootless:true} Uptime:0h 19m 44.00s} Registries:{Search:[docker.io]} Store:{ConfigFile:/var/home/core/.config/containers/storage.conf ContainerStore:{Number:0} GraphDriverName:overlay GraphOptions:{} GraphRoot:/var/home/core/.local/share/containers/storage GraphStatus:{BackingFilesystem:xfs NativeOverlayDiff:true SupportsDType:true UsingMetacopy:false} ImageStore:{Number:0} RunRoot:/run/user/503/containers VolumePath:/var/home/core/.local/share/containers/storage/volumes}}
+I0513 17:11:38.627519   70898 errors.go:106] postmortem podman info: {Host:{BuildahVersion:1.39.4 CgroupVersion:v2 Conmon:{Package:conmon-2.1.12-3.fc41.aarch64 Path:/usr/bin/conmon Version:conmon version 2.1.12, commit: } Distribution:{Distribution:fedora Version:41} MemFree:16149307392 MemTotal:16721645568 OCIRuntime:{Name:crun Package:crun-1.20-2.fc41.aarch64 Path:/usr/bin/crun Version:crun version 1.20
+commit: 9c9a76ac11994701dd666c4f0b869ceffb599a66
+rundir: /run/user/503/crun
+spec: 1.0.0
++SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +CRIU +LIBKRUN +WASM:wasmedge +YAJL} SwapFree:0 SwapTotal:0 Arch:arm64 Cpus:8 Eventlogger:journald Hostname:localhost.localdomain Kernel:6.12.13-200.fc41.aarch64 Os:linux Security:{Rootless:true} Uptime:0h 19m 44.00s} Registries:{Search:[docker.io]} Store:{ConfigFile:/var/home/core/.config/containers/storage.conf ContainerStore:{Number:0} GraphDriverName:overlay GraphOptions:{} GraphRoot:/var/home/core/.local/share/containers/storage GraphStatus:{BackingFilesystem:xfs NativeOverlayDiff:true SupportsDType:true UsingMetacopy:false} ImageStore:{Number:0} RunRoot:/run/user/503/containers VolumePath:/var/home/core/.local/share/containers/storage/volumes}}
+I0513 17:11:38.627592   70898 network_create.go:284] running [podman network inspect gemfire] to gather additional debugging logs...
+I0513 17:11:38.627600   70898 cli_runner.go:164] Run: podman network inspect gemfire
+W0513 17:11:38.695829   70898 cli_runner.go:211] podman network inspect gemfire returned with exit code 125
+I0513 17:11:38.695852   70898 network_create.go:287] error running [podman network inspect gemfire]: podman network inspect gemfire: exit status 125
+stdout:
+[]
+
+stderr:
+Error: network gemfire: network not found
+I0513 17:11:38.695864   70898 network_create.go:289] output of [podman network inspect gemfire]: -- stdout --
+[]
+
+-- /stdout --
+** stderr ** 
+Error: network gemfire: network not found
+
+** /stderr **
+I0513 17:11:38.695946   70898 cli_runner.go:164] Run: podman system info --format json
+I0513 17:11:38.808880   70898 info.go:288] podman info: {Host:{BuildahVersion:1.39.4 CgroupVersion:v2 Conmon:{Package:conmon-2.1.12-3.fc41.aarch64 Path:/usr/bin/conmon Version:conmon version 2.1.12, commit: } Distribution:{Distribution:fedora Version:41} MemFree:16146362368 MemTotal:16721645568 OCIRuntime:{Name:crun Package:crun-1.20-2.fc41.aarch64 Path:/usr/bin/crun Version:crun version 1.20
+commit: 9c9a76ac11994701dd666c4f0b869ceffb599a66
+rundir: /run/user/503/crun
+spec: 1.0.0
++SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +CRIU +LIBKRUN +WASM:wasmedge +YAJL} SwapFree:0 SwapTotal:0 Arch:arm64 Cpus:8 Eventlogger:journald Hostname:localhost.localdomain Kernel:6.12.13-200.fc41.aarch64 Os:linux Security:{Rootless:true} Uptime:0h 19m 44.00s} Registries:{Search:[docker.io]} Store:{ConfigFile:/var/home/core/.config/containers/storage.conf ContainerStore:{Number:0} GraphDriverName:overlay GraphOptions:{} GraphRoot:/var/home/core/.local/share/containers/storage GraphStatus:{BackingFilesystem:xfs NativeOverlayDiff:true SupportsDType:true UsingMetacopy:false} ImageStore:{Number:0} RunRoot:/run/user/503/containers VolumePath:/var/home/core/.local/share/containers/storage/volumes}}
+I0513 17:11:38.809042   70898 ssh_runner.go:195] Run: sh -c "df -h /var | awk 'NR==2{print $5}'"
+I0513 17:11:38.809080   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:38.965945   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:39.040058   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:39.040136   70898 retry.go:31] will retry after 160.020947ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:39.200648   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:39.334568   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:39.402420   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:39.402496   70898 retry.go:31] will retry after 510.91122ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:39.914910   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:40.058830   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:40.142706   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:40.142791   70898 retry.go:31] will retry after 337.214033ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:40.481644   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:40.634500   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:40.716445   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+W0513 17:11:40.716520   70898 start.go:268] error running df -h /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+
+W0513 17:11:40.716528   70898 start.go:235] error getting percentage of /var that is free: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:40.716638   70898 ssh_runner.go:195] Run: sh -c "df -BG /var | awk 'NR==2{print $4}'"
+I0513 17:11:40.716682   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:40.818798   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:40.892990   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:40.893079   70898 retry.go:31] will retry after 166.457165ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:41.060900   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:41.189297   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:41.270041   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:41.270115   70898 retry.go:31] will retry after 260.887469ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:41.532576   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:41.654667   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:41.729005   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+I0513 17:11:41.729077   70898 retry.go:31] will retry after 329.854618ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:42.060250   70898 cli_runner.go:164] Run: podman version --format {{.Version}}
+I0513 17:11:42.174216   70898 cli_runner.go:164] Run: podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire
+W0513 17:11:42.245078   70898 cli_runner.go:211] podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire returned with exit code 125
+W0513 17:11:42.245160   70898 start.go:283] error running df -BG /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+
+W0513 17:11:42.245170   70898 start.go:240] error getting GiB of /var that is available: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "gemfire": podman container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no such container "gemfire"
+I0513 17:11:42.245178   70898 fix.go:56] duration metric: took 4.122880667s for fixHost
+I0513 17:11:42.245182   70898 start.go:83] releasing machines lock for "gemfire", held for 4.123056s
+W0513 17:11:42.245269   70898 out.go:270] 😿  Failed to start podman container. Running "minikube delete -p gemfire" may fix it: driver start: start: podman start gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no container with name or ID "gemfire" found: no such container
+
+I0513 17:11:42.254755   70898 out.go:201] 
+W0513 17:11:42.259860   70898 out.go:270] ❌  Exiting due to GUEST_PROVISION: error provisioning guest: Failed to start host: driver start: start: podman start gemfire: exit status 125
+stdout:
+
+stderr:
+Error: no container with name or ID "gemfire" found: no such container
+
+W0513 17:11:42.259872   70898 out.go:270] 
+W0513 17:11:42.260363   70898 out.go:293] [31m╭───────────────────────────────────────────────────────────────────────────────────────────╮[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    😿  If the above advice does not help, please let us know:                             [31m│[0m
+[31m│[0m    👉  https://github.com/kubernetes/minikube/issues/new/choose                           [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m╰───────────────────────────────────────────────────────────────────────────────────────────╯[0m
+I0513 17:11:42.273741   70898 out.go:201] 
+
+

@@ -1,0 +1,58 @@
+# kubectl -n us  create secret generic gem-admin --from-literal=username=operator --from-literal=password=secret
+# kubectl -n NAMESPACE-NAME create secret generic SECRET-NAME --from-literal=username=<MY_USERNAME> --from-literal=password=<MY_PASSWORD>
+
+apiVersion: v1
+data:
+  password: c2VjcmV0
+  username: b3BlcmF0b3I=
+kind: Secret
+metadata:
+  creationTimestamp: "2025-02-26T03:05:30Z"
+  name: gem-admin
+  namespace: us
+  resourceVersion: "7831"
+  uid: 669c6f59-185c-4802-88d6-3dc0a4653537
+type: Opaquek 
+---    
+apiVersion: gemfire.vmware.com/v1
+kind: GemFireCluster
+metadata:
+  name: la
+  namespace: us
+spec:
+  security:
+    tls: {}  
+    mgmtSvcCredentialsSecretName: gem-admin
+  image: registry.packages.broadcom.com/pivotal-gemfire/vmware-gemfire:10.1.1
+  imagePullSecrets:
+    - name: image-pull-secret
+  locators:
+    libraries:
+      - name: my-custom-security-manager
+        container:
+          image: demo.goharbor.io/gemfiredemo/gemfirelibs:ver3 
+          path: "/custom-manager/*.jar"
+    overrides:
+      gemFireProperties:
+        - name: "start-dev-rest-api"
+          value: "true"
+        - name: "distributed-system-id"
+          value: "3"
+        - name: "security-manager"
+          value: "dev.jawilson.gemfire.BasicSecurityManager"
+        - name: "security-peer-auth-init"
+          value: "dev.jawilson.gemfire.UserPasswordAuthInit"
+  servers:
+    libraries:
+      - name: my-custom-security-manager
+        container:
+          image: demo.goharbor.io/gemfiredemo/gemfirelibs:ver3 
+          path: "/custom-manager/*.jar"  
+    overrides:
+      gemFireProperties:
+        - name: "start-dev-rest-api"
+          value: "true"
+        - name: "security-manager"
+          value: "dev.jawilson.gemfire.BasicSecurityManager"
+        - name: "security-peer-auth-init"
+          value: "dev.jawilson.gemfire.UserPasswordAuthInit"
